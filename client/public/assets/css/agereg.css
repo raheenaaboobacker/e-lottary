@@ -1,0 +1,9 @@
+.bgimage{
+    background-image: url('https://images.pexels.com/photos/68912/pexels-photo-68912.jpeg?auto=compress&cs=tinysrgb&w=600');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.select{
+    border-radius: 5px;
+}

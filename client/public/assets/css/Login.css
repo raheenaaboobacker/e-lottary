@@ -1,0 +1,24 @@
+.gradient-custom-2 {
+    background-image: url('https://images.pexels.com/photos/2780309/pexels-photo-2780309.jpeg?auto=compress&cs=tinysrgb&w=600');
+  
+   }
+   
+   @media (min-width: 768px) {
+   .gradient-form {
+   height: 100vh !important;
+   }
+   }
+   @media (min-width: 769px) {
+   .gradient-custom-2 {
+   border-top-right-radius: .3rem;
+   border-bottom-right-radius: .3rem;
+   }
+   }
+   .select{
+        text-align: center;
+       border-radius: 8px;
+   }  
+   #a1{
+    width: 100%;
+    background: transparent;
+   }

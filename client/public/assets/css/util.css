@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   }
+   body {
+    font-family: cursive;
+   }
+   a {
+    text-decoration: none;
+   }
+   li {
+    list-style: none;
+   }
+   .home {
+	background-image: url("../Images/1.jpg");
+	background-size: cover ;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+    height: 40vh;
+
+}
+.home1 {
+	background-image: url("../Images/pexels-sanoop-m-narayannan-11428111.jpg");
+	background-size: cover ;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+    height: 50vh;
+
+}
+.Agenthome{
+background: rgb(2,0,36);
+background: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 35%, rgb(164, 240, 255) 100%);
+}
+.sector{
+    
+    text-align: center;
+    color: rgb(10, 9, 9);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+}
+
+.sector1{
+    text-align: center;
+    color: rgb(31, 28, 28);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.f1{
+    color: crimson;
+}
+.f2{
+    color: rgb(15, 161, 98);
+}
+
+.cp{
+    border: transparent;
+}
+.linked{
+    background: rgb(242, 246, 246);
+    color: green;
+   
+}
+.wel{
+    color: rgb(10, 10, 98);
+}
+.act{
+  
+    justify-items: center;
+}
+.home2 {
+	background-image: url("https://images.pexels.com/photos/962464/pexels-photo-962464.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+	background-size: cover ;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+    height: 40vh;
+
+}
+#resultt{
+    text-align: center;
+font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#inputGroupSelect05
+{
+    border-radius: 10%;
+}
+.paymentprehome
+{
+    background-image: url("https://images.pexels.com/photos/50987/money-card-business-credit-card-50987.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+	background-size: cover ;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+  
+}
+.booker{
+
+    background: linear-gradient(90deg, rgb(255, 252, 252) 0%, rgb(255, 255, 255) 35%, rgb(218, 249, 255) 100%);
+}
+.bod{
+  
+    border-radius: 2ex;
+    border-color: rgba(23, 18, 18, 0.3);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
