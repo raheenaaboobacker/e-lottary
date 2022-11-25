@@ -7,7 +7,8 @@ export default function Prebook() {
   const [ticket, setTicket] = useState([])
   const [pticket, setPticket] = useState([])
   const [pre, setPre] = useState([])
-  const [data, setData] = useState("false")
+  const [data, setData] = useState(null)
+  const [temp, setTemp] = useState(null)
     const navigate=useNavigate()
     useEffect(() => {
         axios.get("http://localhost:5000/lottary/view-category")
@@ -17,7 +18,7 @@ export default function Prebook() {
                     console.log(response.data.data);
                 }
             })
-    }, [])
+    }, [temp])
 
     const showTicket= (event) => {
       console.log('Selected value:', event.target.value);
@@ -50,36 +51,54 @@ export default function Prebook() {
       console.log(pticket);
     }
 
-    const prebook=()=>{
+    const prebook=(e)=>{
+      e.preventDefault()
      let id=localStorage.getItem("loginId")
 
      pticket.forEach((element, index) => {
      console.log(element);
      
       console.log(pre);
-      // axios.post(`http://localhost:5000/lottary/pre-book/${id}/${element}`,pre)
-      // .then(response => {
-      //   console.log(response);
-      //     if (response.data.success == true) {
-      //       setData(true)
-      //     }
-      // })
+      axios.post(`http://localhost:5000/lottary/pre-book/${id}/${element}`,pre)
+      .then(response => {
+        console.log(response);
+          if (response.data.success == true) {
+            setData(true)
+            console.log(response);
+            console.log(data);
+          }else{
+            setData(false)
+
+          }
+      }).catch(err=>{
+        setData(false)
+      })
     })
-    if(data===true){
+    
+    }
+
+    useEffect(() => {
+     if(data==true){
       alert("pre booked")
-    }else{
-      alert("something Went wrong")
-    }
-    }
+      setTemp(true)
+      window.location.reload()
+     }if (data==false) {
+      alert("Something went wrong!!")
+     }      
+      
+
+    }, [data])
+    
 
   return (
     <div>
         <section className="about d-flex  py-1 " id="about">
           
         <div className="container" >
+          <form onSubmit={prebook}>
             <div  className="  px-5 text-center  pb-4 row"><h1>Prebook your Tickets</h1></div>
             <div className="input-group row mt-4 mb-3">
-                <select className=" col-md-12 form-select bod" id="inputGroupSelect01" name='district' value={pre.district} onChange={handleInputChange}>
+                <select className=" col-md-12 form-select bod" id="inputGroupSelect01" name='district' value={pre.district} onChange={handleInputChange} required>
                 <option selected >District</option>
                         <option value="Alappuzha">Alappuzha</option>
                         <option value="Ernakulam">Ernakulam</option>
@@ -100,7 +119,7 @@ export default function Prebook() {
              
               <div className="input-group mb-3 row">
                 
-                <select onChange={e => {showTicket(e);handleInputChange(e)}} className="form-select col-12  bod"   id="inputGroupSelect01" name='category_id' value={pre.category_id} >
+                <select onChange={e => {showTicket(e);handleInputChange(e)}} className="form-select col-12  bod"   id="inputGroupSelect01" name='category_id' value={pre.category_id} required>
                   <option selected>Tickect Category</option>
                   {category&&category.map(data=>(
                       <option  value={data._id}>{data.category_name}</option>
@@ -152,9 +171,11 @@ export default function Prebook() {
                 </label>
               </div>
               <div className='row py-3'>
-              <button type="submit" onClick={prebook} className="btn btn-success btn-lg col-3" >Prebook</button>
+              <button type="submit"  className="btn btn-success btn-lg col-3" >Prebook</button>
             <button type="reset"   className=" mx-5 btn btn-primary btn-lg col-2">Reset</button>  
-            </div>       
+           
+            </div>   
+            </form>    
         </div> 
       
     </section>
